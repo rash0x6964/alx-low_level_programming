@@ -15,7 +15,10 @@ int main(void)
 	{
 		long int fib = fib1 + fib2;
 
-		printf(", %ld", fib);
+		if (i != 49)
+			printf("%ld, ", fib);
+		else
+			prinft("%ld", fib);
 		fib1 = fib2;
 		fib2 = fib;
 	}
