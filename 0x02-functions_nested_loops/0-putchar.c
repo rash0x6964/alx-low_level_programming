@@ -11,7 +11,8 @@ int main(void)
 	int i = 0;
 
 	buffer[8] = '\0';
-	while(buffer[i] != '\0') {
+	while (buffer[i] != '\0')
+	{
 		_putchar(buffer[i++]);
 	}
 	_putchar('\n');

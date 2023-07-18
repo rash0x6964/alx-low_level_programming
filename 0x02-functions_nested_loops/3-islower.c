@@ -2,14 +2,18 @@
 
 /**
  * _islower - checks for lowerscases character
- * Return : int
- * 0 if uppercase
- * 1 if lowwercase
+ * @c: fun param
+ * Return: 0 if uppercase, 1 if lowwercase
  */
 
-int _islower(int c) {
+int _islower(int c)
+{
 	if (c >= 'a' && c <= 'z')
-		return 1;
+	{
+		return (1);
+	}
 	else
-		return 0;
+	{
+		return (0);
+	}
 }
