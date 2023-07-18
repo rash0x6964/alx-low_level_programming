@@ -18,7 +18,7 @@ int main(void)
 		if (i != 49)
 			printf("%ld, ", fib);
 		else
-			prinft("%ld", fib);
+			printf("%ld", fib);
 		fib1 = fib2;
 		fib2 = fib;
 	}
