@@ -7,13 +7,13 @@
 
 int main(void)
 {
-	long long fib1 = 0;
-	long long fib2 = 1;
+	long int fib1 = 0;
+	long int fib2 = 1;
 	int i;
 
 	for (i = 0; i < 50; i++)
 	{
-		long long fib = fib1 + fib2;
+		long int fib = fib1 + fib2;
 
 		printf(", %ld", fib);
 		fib1 = fib2;
