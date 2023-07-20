@@ -40,8 +40,8 @@ void print_number(int n)
 
 	while (power >= 1)
 	{
-		numchar = (temp / j) % 10;
+		numchar = (temp / power) % 10;
 		_putchar(numchar + '0');
-		j = j / 10;
+		power = power / 10;
 	}
 }
