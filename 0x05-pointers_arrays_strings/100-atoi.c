@@ -15,8 +15,8 @@ int _atoi(char *s)
 	value = 0;
 	sign = 0;
 	i = 0;
-	while (str[*i] == ' ' || str[*i] == '\f' || str[*i] == '\n'
-		|| str[*i] == '\r' || str[*i] == '\t' || str[*i] == '\v')
+	while (s[*i] == ' ' || s[*i] == '\f' || s[*i] == '\n'
+		|| s[*i] == '\r' || s[*i] == '\t' || s[*i] == '\v')
 		(*i)++;
 	while (s[i] == '+' || s[i] == '-')
 	{
