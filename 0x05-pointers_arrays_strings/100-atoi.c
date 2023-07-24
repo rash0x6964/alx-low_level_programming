@@ -26,7 +26,6 @@ int _atoi(char *s)
 		if (value == 2147483640 && s[i] == '8')
 			return (-2147483648);
 		value += s[i] - '0';
-			
 		i++;
 	}
 	sign = 1 - 2 * (sign % 2);
