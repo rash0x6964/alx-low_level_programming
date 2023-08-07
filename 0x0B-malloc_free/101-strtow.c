@@ -9,8 +9,8 @@
 
 int	ft_arraycount(char *str)
 {
-	int		i;
-	int		count;
+	int i;
+	int count;
 
 	count = 0;
 	i = 0;
@@ -41,7 +41,7 @@ int	ft_strlen_sep(char *str)
 
 	i = 0;
 	while (str[i] && str[i] != ' ')
-			i++;
+		i++;
 	return (i);
 }
 
@@ -53,9 +53,9 @@ int	ft_strlen_sep(char *str)
 
 char	*ft_word(char *str)
 {
-	int		i;
-	int		len;
-	char	*p;
+	int i;
+	int len;
+	char *p;
 
 	len = ft_strlen_sep(str);
 	i = 0;
@@ -85,6 +85,8 @@ char	**strtow(char *str)
 
 	i = 0;
 	len = ft_arraycount(str);
+	if (len == 0)
+		return (0);
 	result = malloc(sizeof(char **) * (len + 1));
 	if (!result)
 		return (0);
