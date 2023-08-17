@@ -2,17 +2,6 @@
 #include <stdio.h>
 
 /**
- * is_specifier - check if it's specifier
- * @c: char
- * Return: true or false
- */
-
-int is_specifier(char c)
-{
-	return (c == 'c' || c == 'i' || c == 'f' || c == 's');
-}
-
-/**
  * print_all -  prints anything, followed by a new line.
  * @format: list of types of arguments passed to the function
  * @...: other args
@@ -28,7 +17,11 @@ void print_all(const char * const format, ...)
 	va_start(ap, format);
 	while (format && format[i])
 	{
-		(void) (i > 0 && is_specifier(c) && printf(", "));
+		if (i > 0 && (format[i] == 'c' || format[i] == 'i'
+			     || format[i] == 'f' || format[i] == 's'))
+		{
+			printf(", ");
+		}
 		switch (format[i])
 		{
 			case 'c':
@@ -42,7 +35,8 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				s = va_arg(ap, char*);
-				(void) ((s && printf("%s", s)) || printf("(nil)"));
+				if ((s && printf("%s", s)) || printf("(nil)"))
+				{}
 				break;
 			default:
 				break;
