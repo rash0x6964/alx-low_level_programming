@@ -25,7 +25,6 @@ size_t _strlen(const char *str)
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *tmp_head;
 	list_t *new;
 
 	if (!head)
@@ -35,27 +34,10 @@ list_t *add_node(list_t **head, const char *str)
 	if (!new)
 		return (NULL);
 
-	new->next = NULL;
-	if (str)
-	{
-		new->str = strdup(str);
-		new->len = _strlen(str);
-	}
-	else
-	{
-		new->str = NULL;
-		new->len = 0;
-	}
+	new->str = strdup(str);
+	new->len = _strlen(str);
+	new->next = *head;
+	*head = new;
 
-	if (!*head)
-	{
-		*head = new;
-		return (new);
-	}
-
-	tmp_head = *head;
-	while (tmp_head->next)
-		tmp_head = tmp_head->next;
-	tmp_head->next = new;
 	return (new);
 }
