@@ -23,7 +23,7 @@ size_t _strlen(const char *str)
  * Return: list_t
  */
 
-list_t *add_node_end(list_t **head, const char *str);
+list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *tmp_head;
 	list_t *new;
