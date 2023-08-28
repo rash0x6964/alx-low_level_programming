@@ -1,6 +1,24 @@
 #include "lists.h"
 
 /**
+ * create_node - cearte node and fill it
+ * @n: value of node
+ * Return: the new node
+ */
+
+listint_t *create_node(int n)
+{
+	listint_t *new;
+
+	new = malloc(sizeof(listint_t));
+	if (!new)
+		return (NULL);
+	new->n = n;
+	new->next = NULL;
+	return (new);
+}
+
+/**
  * insert_nodeint_at_index - inserts a new node at a given position.
  * @head: the head of the list
  * @idx: the index of the list where the new node should be added
@@ -17,20 +35,15 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	if (!head)
 		return (NULL);
-
-	new = malloc(sizeof(listint_t));
+	new = create_node(n);
 	if (!new)
 		return (NULL);
-	new->n = n;
-	new->next = NULL;
-
 	if (idx == 0)
 	{
 		new->next = tmp_list;
 		*head = new;
 		return (new);
 	}
-
 	while (tmp_list)
 	{
 		if (index == idx)
@@ -43,13 +56,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		prev_node = tmp_list;
 		tmp_list = tmp_list->next;
 	}
-
 	if (index == idx)
 	{
 		prev_node->next = new;
 		return (new);
 	}
-
 	free(new);
 	return (NULL);
 }
