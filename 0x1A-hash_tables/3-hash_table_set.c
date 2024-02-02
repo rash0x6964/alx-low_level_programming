@@ -15,9 +15,9 @@ hash_node_t *create_new_node(const char *key, const char *value)
 		return (0);
 	node->key = (char *)key;
 	node->value = (char *)value;
-    node->next = NULL;
+	node->next = NULL;
 
-	return node;
+	return (node);
 }
 
 /**
@@ -46,10 +46,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		if (strcmp(ht->array[index]->key, key) == 0)
-        {
-            free(ht->array[index]->value);
-            ht->array[index]->value = value;
-        }
+		{
+			free(ht->array[index]->value);
+			ht->array[index]->value = value;
+		}
 		else
 		{
 			node = create_new_node(key, value);
