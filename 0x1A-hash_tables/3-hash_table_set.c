@@ -45,7 +45,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		if (strcmp(ht->array[index]->key, key) == 0)
-			strcpy(ht->array[index]->value, value);
+			ht->array[index]->value = (char *)value;
 		else
 		{
 			node = create_new_node(key, value);
